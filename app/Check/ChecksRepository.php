@@ -20,6 +20,7 @@ class ChecksRepository extends Nextras\Orm\Repository\Repository
 			AliveCheck::class,
 			TermCheck::class,
 			DnsCheck::class,
+			HttpCodeCheck::class,
 		];
 	}
 
@@ -35,6 +36,8 @@ class ChecksRepository extends Nextras\Orm\Repository\Repository
 					return TermCheck::class;
 				case ICheck::TYPE_DNS:
 					return DnsCheck::class;
+				case ICheck::TYPE_HTTP_CODE:
+					return HttpCodeCheck::class;
 
 				default:
 					throw new \Nextras\Orm\InvalidStateException();

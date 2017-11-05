@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f87ef3001b0724eadd5866761bc66f1b",
+    "content-hash": "574d300aaf1e15c56db802aa7ef2f7a4",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2784,111 +2784,6 @@
                 "responses"
             ],
             "time": "2016-08-10T12:47:50+00:00"
-        },
-        {
-            "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dotenv\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause-Attribution"
-            ],
-            "authors": [
-                {
-                    "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
-                }
-            ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
-            "keywords": [
-                "dotenv",
-                "env",
-                "environment"
-            ],
-            "time": "2016-09-01T10:05:43+00:00"
-        },
-        {
-            "name": "wodcz/nette-dotenv",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wodCZ/nette-dotenv.git",
-                "reference": "1e9f438a77ab4b44fbc9eb4ba059a02815086189"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wodCZ/nette-dotenv/zipball/1e9f438a77ab4b44fbc9eb4ba059a02815086189",
-                "reference": "1e9f438a77ab4b44fbc9eb4ba059a02815086189",
-                "shasum": ""
-            },
-            "require": {
-                "vlucas/phpdotenv": "^2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0||~5.0",
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "wodCZ\\NetteDotenv\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Martin Janecek",
-                    "email": "admin@ikw.cz",
-                    "homepage": "https://ikw.cz",
-                    "role": "Developer"
-                }
-            ],
-            "description": "dotenv integration into Nette framework",
-            "homepage": "https://github.com/wodCZ/nette-dotenv",
-            "keywords": [
-                ".env",
-                "env",
-                "nette",
-                "nette-dotenv",
-                "wodCZ"
-            ],
-            "time": "2017-04-11T13:15:55+00:00"
         }
     ],
     "packages-dev": [

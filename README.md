@@ -24,11 +24,12 @@ Příklad konfigurace démona `supervisord` pro běh RabbitMQ consumerů je v `/
 
 ## Vývoj v Docker-u
 
-1. copy and move `/config/.env.example` to `/.env`
-2. fill `/.env` file
-3. `docker-compose up`
-4. `docker-compose run web php www/index.php migrations:continue`
-
+1. copy and move `/config/.env.example` to `/.env` and fill values with correct one.
+2. copy and move `/config/`
+3. fill `/.env` file
+4. `docker-compose up`
+5. `docker-compose run web composer install`
+6. `docker-compose run web php www/index.php migrations:continue`
 
 ## Vývoj ve Vagrantu
 

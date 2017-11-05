@@ -22,6 +22,14 @@ cp config/config.local.example.neon app/config/config.local.neon
 
 Příklad konfigurace démona `supervisord` pro běh RabbitMQ consumerů je v `/config/supervisor.conf`.
 
+## Vývoj v Docker-u
+
+1. copy and move `/config/.env.example` to `/.env`
+2. fill `/.env` file
+3. `docker-compose up`
+4. `docker-compose run web php www/index.php migrations:continue`
+
+
 ## Vývoj ve Vagrantu
 
 Po stažení aplikace je k dispozici Vagrant, jako vývojové prostředí. Před použitím je třeba nainstalovat:

@@ -34,7 +34,8 @@
 		"kdyby/rabbitmq": "dev-master#b95342baa3a75cea930fcd0efbf5b84479d02d34",
 		"nette/mail": "2.4.*",
 		"nextras/forms": "2.0.*",
-		"ublaboo/datagrid": "^5.4"
+		"ublaboo/datagrid": "^5.4",
+		"wodcz/nette-dotenv": "^2.0"
 	},
 	"require-dev": {
 		"pd/coding-standard": "1.8.0",

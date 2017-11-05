@@ -8,6 +8,7 @@ extensions:
 	monitoring.monolog: Pd\Monitoring\Monolog\DI\Extension
 	rabbitmq: Kdyby\RabbitMq\DI\RabbitMqExtension
 	nextras.form: Nextras\Forms\Bridges\NetteDI\FormsExtension
+	env: wodCZ\NetteDotenv\DotEnvExtension
 
 
 orm:

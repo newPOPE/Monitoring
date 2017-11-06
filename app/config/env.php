@@ -11,5 +11,8 @@ return [
       'hookUrl' => getenv('SLACK_HOOKURL'),
     ],
   ],
+  'console'    => [
+    'url' => getenv('APP_URL'),
+  ],
 ];
 

@@ -4,6 +4,7 @@ services:
     build: .docker
     links:
       - mysql
+      - adminer
     volumes:
       - .:/src
     ports:
@@ -23,3 +24,10 @@ services:
       MYSQL_DATABASE: monitoring
       MYSQL_USER: monitoring
       MYSQL_PASSWORD: monitoring
+
+  adminer:
+    image: adminer:4.3.1
+    links:
+      - mysql
+    ports:
+      - 81:8080

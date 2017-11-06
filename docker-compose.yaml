@@ -25,6 +25,14 @@ services:
       MYSQL_USER: monitoring
       MYSQL_PASSWORD: monitoring
 
+  rabbitmq:
+    image: rabbitmq:3.6.10-management
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+    ports:
+      - 82:15672
+    hostname: rabbitmq
+
   adminer:
     image: adminer:4.3.1
     links:

@@ -15,6 +15,9 @@ services:
 
   mysql:
     image: mysql:5.7
+    volumes:
+      - ./data/mysql/:/var/lib/mysql
+      - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf:ro
     environment:
       MYSQL_ROOT_PASSWORD: foo
       MYSQL_DATABASE: monitoring

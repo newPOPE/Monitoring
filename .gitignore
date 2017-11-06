@@ -2,6 +2,7 @@
 /app/config/config.local.neon
 /.vagrant
 /node_modules
+/data
 
 /output.*
 

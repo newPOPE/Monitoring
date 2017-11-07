@@ -41,7 +41,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x
 RUN apt-get install -y nodejs npm && npm install -g yarn
 
 # composer
-RUN curl -s -o /usr/local/bin/composer https://getcomposer.org/download/1.3.1/composer.phar
+RUN curl -s -o /usr/local/bin/composer https://getcomposer.org/composer.phar
 RUN chmod +x /usr/local/bin/composer
 
 # apache

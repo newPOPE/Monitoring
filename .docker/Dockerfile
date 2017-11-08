@@ -45,10 +45,6 @@ RUN apt-get install -y nodejs npm && npm install -g yarn
 RUN curl -s -o /usr/local/bin/composer https://getcomposer.org/composer.phar
 RUN chmod +x /usr/local/bin/composer
 
-# apache
-COPY monitoring.conf /etc/apache2/sites-available/000-default.conf
-RUN a2enmod expires rewrite
-
 # create user
 RUN groupadd -g 1000 -r monitoring && useradd -r -u 1000 -m -g monitoring monitoring
 RUN sed -i "s/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=monitoring/g" /etc/apache2/envvars
@@ -60,3 +56,7 @@ RUN chown -R monitoring:monitoring /home/monitoring
 
 # setup supervisor
 COPY supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+
+# apache
+COPY apache2/monitoring.conf /etc/apache2/sites-available/000-default.conf
+RUN a2enmod expires rewrite

@@ -49,9 +49,7 @@ RUN chmod +x /usr/local/bin/composer
 RUN groupadd -g 1000 -r monitoring && useradd -r -u 1000 -m -g monitoring monitoring
 RUN sed -i "s/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=monitoring/g" /etc/apache2/envvars
 RUN sed -i "s/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=monitoring/g" /etc/apache2/envvars
-#RUN usermod -a -G sudo monitoring
 RUN passwd --delete monitoring
-#RUN echo "monitoring  ALL=(ALL:ALL) ALL" >> /etc/sudoers
 RUN chown -R monitoring:monitoring /home/monitoring
 
 # setup supervisor

@@ -28,8 +28,8 @@ Příklad konfigurace démona `supervisord` pro běh RabbitMQ consumerů je v `/
 2. copy and move `/config/`
 3. fill `/.env` file
 4. `docker-compose build`
-5. `docker-compose run web composer install`
-6. `docker-compose run web php www/index.php migrations:continue`
+5. `docker-compose run monitoring composer install`
+6. `docker-compose run monitoring php www/index.php migrations:continue`
 7. `docker-compose up`
 8. `docker-compose run --rm monitoring supervisor -n`
 9. `docker-compose run --rm monitoring cron -f`

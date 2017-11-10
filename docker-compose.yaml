@@ -11,7 +11,9 @@ services:
     ports:
       - 80:80
     working_dir: /src
+    user: root
     command: apachectl -DFOREGROUND
+    stdin_open: true
     env_file:
       - .env
 

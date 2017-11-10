@@ -1,0 +1,7 @@
+# Monitoring
+*/1 * * * *        /usr/bin/php /src/www/index.php pd:monitoring:check:publish:alive-checks
+0,15,30,45 * * * * /usr/bin/php /src/www/index.php pd:monitoring:check:publish:dns-checks
+0 */6 * * *        /usr/bin/php /src/www/index.php pd:monitoring:check:publish:certificate-checks
+0,30 * * * *       /usr/bin/php /src/www/index.php pd:monitoring:check:publish:feed-checks
+0,15,30,45 * * * * /usr/bin/php /src/www/index.php pd:monitoring:check:publish:rabbit-consumer-checks
+*/1 * * * *        /usr/bin/php /src/www/index.php pd:monitoring:check:slack-check-statuses

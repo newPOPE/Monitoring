@@ -3,6 +3,11 @@ MAINTAINER adam.stipak@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# create user
+RUN groupadd -g 1000 -r monitoring && useradd -r -u 1000 -m -g monitoring monitoring
+RUN passwd --delete monitoring
+RUN chown -R monitoring:monitoring /home/monitoring
+
 RUN apt-get update && apt-get install -y \
   curl \
   vim \
@@ -15,7 +20,8 @@ RUN apt-get update && apt-get install -y \
   apt-transport-https \
   lsb-release \
   ca-certificates \
-  supervisor
+  supervisor \
+  cron
 
 # php
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
@@ -45,16 +51,19 @@ RUN apt-get install -y nodejs npm && npm install -g yarn
 RUN curl -s -o /usr/local/bin/composer https://getcomposer.org/composer.phar
 RUN chmod +x /usr/local/bin/composer
 
-# create user
-RUN groupadd -g 1000 -r monitoring && useradd -r -u 1000 -m -g monitoring monitoring
-RUN sed -i "s/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=monitoring/g" /etc/apache2/envvars
-RUN sed -i "s/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=monitoring/g" /etc/apache2/envvars
-RUN passwd --delete monitoring
-RUN chown -R monitoring:monitoring /home/monitoring
-
-# setup supervisor
+# supervisor
 COPY supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
 # apache
+RUN sed -i "s/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=monitoring/g" /etc/apache2/envvars
+RUN sed -i "s/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=monitoring/g" /etc/apache2/envvars
 COPY apache2/monitoring.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod expires rewrite
+RUN ln -sfT /dev/stderr "/var/log/apache2/error.log" \
+  && ln -sfT /dev/stdout "/var/log/apache2/access.log"
+
+# cron
+RUN touch /var/log/cron.log
+COPY cron/crontab /tmp/crontab
+USER monitoring
+RUN crontab /tmp/crontab
